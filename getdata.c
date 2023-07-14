@@ -1,7 +1,7 @@
 #include  "main.h"
 
 /**
- * c_data - initialize data_t struct
+ * cdata_t - initialize data_t struct
  * @data: struct address
  */
 void cdata_t(data_t *data)
@@ -15,7 +15,7 @@ void cdata_t(data_t *data)
 /**
  * sdata_t - initializes data_t struuct
  * @data: struct address
- * @av: argument vecto
+ * @a: argument vecto
  */
 void sdata_t(data_t *data, char **a)
 {
@@ -45,8 +45,8 @@ void sdata_t(data_t *data, char **a)
 
 /**
  * fdata_t - frees dta_t struct fields
- * @dat: struct address
- * @all: true if freeing all fields
+ * @data: struct address
+ * @sawa: true if freeing all fields
  */
 void fdata_t(data_t *data, int sawa)
 {
