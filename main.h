@@ -35,5 +35,12 @@ void our_eputs(char *);
 int our_putnodes(char *, int);
 int our_eputchar(char);
 
+/** our_error.c functions */
+int strip_c(char *);
+int show_fig(int, int);
+void show_emsg(data_t *, char *);
+char *novit_char(long int, int, int);
+void novit_words(char *);
+
 
 #endif /** MAIN_H */
