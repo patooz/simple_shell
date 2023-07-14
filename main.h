@@ -42,5 +42,13 @@ void show_emsg(data_t *, char *);
 char *novit_char(long int, int, int);
 void novit_words(char *);
 
+/** our_list.c functions */
+node_t *a_listn(node_t **, const char *, int);
+node_t *a_listn_last(node_t **, const char *, int)
+size_t show_listn_s(const node_t *);
+int rm_listn(node_t **, unsigned int);
+void claim_list_mem(node_t **);
+
+
 
 #endif /** MAIN_H */
