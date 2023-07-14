@@ -23,9 +23,17 @@ void our_puts(char *);
 char *our_strdup(const char *);
 char *our_strcpy(char *, char *);
 
+/** our_string.c functions */
+int our_strcmp(char *, char *);
+char *first_char(const char *, const char *);
+int our_strlen(char *);
+char *our_strcat(char *, char *);
 
-
-
+/** our_errors.c functions */
+int our_putnode(char, int);
+void our_eputs(char *);
+int our_putnodes(char *, int);
+int our_eputchar(char);
 
 
 #endif /** MAIN_H */
