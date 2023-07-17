@@ -49,6 +49,48 @@ size_t show_listn_s(const node_t *);
 int rm_listn(node_t **, unsigned int);
 void claim_list_mem(node_t **);
 
+/** final.c function */
+char street(char *, char *);
+char street2(char *, char);
+
+/** local.c function */
+char * our_memset(char *, char, unsigned int);
+void_free(char *);
+void * alloc(void *, unsigned int, unsigned int);
+
+/** think.c function */
+int free_all(void **);
+
+/** get.c function */
+int active(d_t *);
+int denim(char, char *);
+int our_isalpha(int);
+int stoi(char *);
+
+/** pass.c function */
+int pass(data_t *, char *);
+char *new_char(char *, int, int);
+char *our_path(data_t *, char *, char *);
+
+/** geo.c function */
+char *geo file(data_t *i);
+int geo write(data_t *i);
+int geo read(data_t *i);
+int geo list(data_t *i, char *buf, int linecount);
+int geo renumber(data_t *i);
+
+/** ariel.c function */
+char get(data_t *, const char *);
+int env(data_t *);
+int my set(data_t *);
+int my unset(data_t *);
+int my list(data_t *);
+
+/** general.c function */
+char general(data_t *);
+int micro(data_t *, char *);
+int mini(data_t *, char *, char *);
+
 
 
 #endif /** MAIN_H */
