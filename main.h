@@ -103,5 +103,12 @@ int our_quit(data_t *);
 int our_dir(data_t *);
 int our_help(data_t *);
 
+/** inherits.c functions */
+int our_hist(data_t *);
+int remove_otherwise(data_t *, char *);
+int add_otherwise(data_t *, char *);
+int show_otherwise(node_t *);
+int our_otherwise(data_t *);
+
 
 #endif /** MAIN_H */
