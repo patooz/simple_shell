@@ -91,6 +91,17 @@ char general(data_t *);
 int micro(data_t *, char *);
 int mini(data_t *, char *, char *);
 
+/** our_lists.c functions */
+size_t show_l(const node_t *);
+size_t size_l(const node_t *);
+char **convert_s(node_t *);
+node_t *init_form(node_t *, char *, char);
+ssize_t node_i(node_t *, node_t *);
+
+/** inherited.c functions */
+int our_quit(data_t *);
+int our_dir(data_t *);
+int our_help(data_t *);
 
 
 #endif /** MAIN_H */
