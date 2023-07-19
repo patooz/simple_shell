@@ -117,5 +117,11 @@ ssize_t b_read(data_t *, char *, size_t *);
 ssize_t b_input(data_t *, char **, size_t *);
 void sig_h(__attribute__((unused)) int);
 
+/** toka.c functions */
+char *our_strchr(char *, char);
+char *our_strncat(char *, char *, int);
+char *our_strncpy(char *, char *, int);
+
+
 
 #endif /** MAIN_H */
