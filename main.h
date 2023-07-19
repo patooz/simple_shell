@@ -110,5 +110,12 @@ int add_otherwise(data_t *, char *);
 int show_otherwise(node_t *);
 int our_otherwise(data_t *);
 
+/** find_line.c functions */
+ssize_t find_input(data_t *);
+int find_ln(data_t *, char **, size_t *);
+ssize_t b_read(data_t *, char *, size_t *);
+ssize_t b_input(data_t *, char **, size_t *);
+void sig_h(__attribute__((unused)) int);
+
 
 #endif /** MAIN_H */
