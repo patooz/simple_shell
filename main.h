@@ -122,6 +122,19 @@ char *our_strchr(char *, char);
 char *our_strncat(char *, char *, int);
 char *our_strncpy(char *, char *, int);
 
+/** commands.c functions */
+int is_c_command(data_t *, char *, size_t *);
+void find_command(data_t *, char *, size_t *, size_t, size_t);
+int r_command(data_t *);
+int other_wise_command(data_t *);
+int rs_command(char **, char *);
+
+/** loop.c functions */
+int loop(data_t *, char **);
+int get_inherent(data_t *);
+void get_d(data_t *);
+void hook_c(data_t *);
+
 
 
 #endif /** MAIN_H */
