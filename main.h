@@ -108,7 +108,7 @@ NULL, 0, NULL, 0, 0, 0, 0, 0}
  * @func: function
  * @type: command flag
  */
-tyedef struct sysd
+typedef struct sysd
 {
 	char *type;
 	int (*func)(data_t *);
@@ -158,7 +158,7 @@ char street2(char *, char);
 
 /** local.c function */
 char *our_memset(char *, char, unsigned int);
-void_free(char *);
+void _free(char *);
 void *alloc(void *, unsigned int, unsigned int);
 
 /** think.c function */
