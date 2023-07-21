@@ -12,6 +12,109 @@
 #include <fcntl.h>
 #include <errno.h>
 
+/** BUFFERS */
+#define BUFF_READ 1024
+#define BUFF_WRITE 1024
+#define FLUSH -1
+
+/** CHAINING COMMANDS */
+#define C_NORM  0
+#define C_O 1
+#define C_A 2
+#define C_C 3
+
+/** for novit_char in our_sec_errors.c */
+#define NOVIT_LOWER 1
+#define NOVIT_UNSIGNED 2
+
+/** for inbuilt getline() */
+#define USE_GETLINE 0
+#define USE_STRTOK 0
+
+#define HIST_FILE   ".shell_history"
+#define HIST_MAX    4096
+
+
+extern char **environ;
+
+
+/**
+ * struct list_struct - linked list
+ * @num: number
+ * @s: string
+ * @in: node pointer
+ */
+typedef struct list_struct
+{
+	int num;
+	char *s;
+	struct list_struct *in;
+} node_t;
+
+/**
+ * struct inf_P - function arguments
+ * @d_buff_t: CMD type
+ * @d_buff: address to the d_buff pointer
+ * @_file: filename
+ * @hist: node to the history
+ * @env: local environment
+ * @otherwise: aliase node
+ * @argc: argument count
+ * @p: command path
+ * @envi_shift: environment shift
+ * @environ: customed environment
+ * @emblem_ln: line of input
+ * @condition: status of the lst command
+ * @argv: argument array
+ * @char_fail: exit error code
+ * @arg: string from find_line
+ * @command_t: for error count
+ * @fd_read: read line fd
+ * @c_line: address pointer
+ * @hist_c: history count
+ * @ren_counter: error counter
+ */
+
+typedef struct inf_P
+{
+	int d_buff_t;
+	char **d_buff;
+	char *_file;
+	node_t *hist;
+	node_t *env;
+	node_t *otherwise;
+	int argc;
+	char *p;
+	int envi_shift;
+	char **environ;
+	int emblem_ln;
+	int condition;
+	char **argv;
+	int char_fail;
+	char *arg;
+	int command_t;
+	int fd_read;
+	int c_line;
+	int hist_c;
+	unsigned int ren_counter;
+}
+
+#define DATA_IT \
+{0, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, 0, 0 \
+NULL, 0, NULL, 0, 0, 0, 0, 0}
+
+/**
+ * struct sysd - for builtin string
+ * @func: function
+ * @type: command flag
+ */
+tyedef struct sysd
+{
+	char *type;
+	int (*func)(data_t *);
+} sys_data;
+
+
 /** c_data functions */
 void cdata_t(data_t *);
 void sdata_t(data_t *, char **);
@@ -44,7 +147,7 @@ void novit_words(char *);
 
 /** our_list.c functions */
 node_t *a_listn(node_t **, const char *, int);
-node_t *a_listn_last(node_t **, const char *, int)
+node_t *a_listn_last(node_t **, const char *, int);
 size_t show_listn_s(const node_t *);
 int rm_listn(node_t **, unsigned int);
 void claim_list_mem(node_t **);
@@ -54,9 +157,9 @@ char street(char *, char *);
 char street2(char *, char);
 
 /** local.c function */
-char * our_memset(char *, char, unsigned int);
+char *our_memset(char *, char, unsigned int);
 void_free(char *);
-void * alloc(void *, unsigned int, unsigned int);
+void *alloc(void *, unsigned int, unsigned int);
 
 /** think.c function */
 int free_all(void **);
