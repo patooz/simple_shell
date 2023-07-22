@@ -50,7 +50,7 @@ node_t *a_listn_last(node_t **a, const char *s, int i)
 	n_list = malloc(sizeof(node_t));
 	if (!n_list)
 		return (NULL);
-	our_memset((void *)n_list., 0, sizeof(node_t));
+	our_memset((void *)n_list, 0, sizeof(node_t));
 	n_list->num = i;
 	if (s)
 	{
@@ -116,7 +116,7 @@ int rm_listn(node_t **a, unsigned int i)
 		if (x == i)
 		{
 			p_list->in = list->in;
-			free(list->d);
+			free(list->s);
 			free(list);
 			return (1);
 		}

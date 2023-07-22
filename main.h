@@ -100,7 +100,7 @@ typedef struct inf_P
 } data_t;
 
 #define DATA_IT \
-{0, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, 0, 0 \
+{0, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, 0, 0, \
 NULL, 0, NULL, 0, 0, 0, 0, 0}
 
 /**
@@ -158,7 +158,7 @@ char **street2(char *, char);
 
 /** local.c function */
 char *our_memset(char *, char, unsigned int);
-void _free(char *);
+void _free(char **);
 void *alloc(void *, unsigned int, unsigned int);
 
 /** think.c function */
@@ -183,7 +183,7 @@ int geolist(data_t *i, char *buf, int linecount);
 int georenumber(data_t *i);
 
 /** ariel.c function */
-char get(data_t *, const char *);
+char * get(data_t *, const char *);
 int our_env(data_t *);
 int our_set(data_t *);
 int our_unset(data_t *);

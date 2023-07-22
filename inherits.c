@@ -62,7 +62,7 @@ int show_otherwise(node_t *list)
 	{
 		a = our_strchr(list->s, '=');
 		for (b = list->s; b <= a; b++)
-			our_putcahr(*b);
+			our_putchar(*b);
 		our_putchar('\'');
 		our_puts(a + 1);
 		our_puts("'\n");

@@ -13,14 +13,14 @@ int loop(data_t *data, char **p)
 	while (a != -1 && b != -2)
 	{
 		cdata_t(data);
-		if (active(dat))
+		if (active(data))
 			our_puts("$ ");
 		our_eputchar(FLUSH);
 		a = find_input(data);
 		if (a != -1)
 		{
 			sdata_t(data, p);
-			b = get_inherited(data);
+			b = get_inherent(data);
 			if (b == -1)
 				get_d(data);
 		}
@@ -79,7 +79,7 @@ void get_d(data_t *data)
 	int b, c;
 
 	data->p = data->argv[0];
-	if (data->emblem_ln == i)
+	if (data->emblem_ln == 1)
 	{
 		data->ren_counter++;
 		data->emblem_ln = 0;
@@ -100,7 +100,7 @@ void get_d(data_t *data)
 	else
 	{
 		if ((active(data) || get(data, "PATH=")
-					|| data->argv[0][0] == '/') && pass(data->argv[0]))
+					|| data->argv[0][0] == '/') && pass(data, data->argv[0]))
 			hook_c(data);
 		else if (*(data->arg) != '\n')
 		{
@@ -139,7 +139,7 @@ void hook_c(data_t *data)
 		{
 			data->condition = WEXITSTATUS(data->condition);
 			if (data->condition == 126)
-				SHOW_EMSG(DATA, "Not allowed\n");
+				show_emsg(data, "Not allowed\n");
 		}
 	}
 }

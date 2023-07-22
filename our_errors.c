@@ -8,7 +8,7 @@
  */
 int our_putnode(char c, int f)
 {
-	static int 1;
+	static int i;
 	static char b[BUFF_WRITE];
 
 	if (c == FLUSH || i >= BUFF_WRITE)

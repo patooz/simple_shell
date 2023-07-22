@@ -88,7 +88,7 @@ int r_command(data_t *data)
 					our_strdup(novit_char(getpid(), 10, 0)));
 			continue;
 		}
-		list = init_from(data->env, &data->argv[x][1], '=');
+		list = init_form(data->env, &data->argv[x][1], '=');
 		if (list)
 		{
 			rs_command(&(data->argv[x]), our_strdup(our_strchr(list->s, '=') + 1));
@@ -106,19 +106,19 @@ int r_command(data_t *data)
 int other_wise_command(data_t *data)
 {
 	int x;
-	node_t *liist;
+	node_t *list;
 	char *n;
 
 	for (x = 0; x < 10; x++)
 	{
-		list = init_from(data->otherwise, data->argv[0], '=');
+		list = init_form(data->otherwise, data->argv[0], '=');
 		if (!list)
 			return (0);
 		free(data->argv[0]);
 		n = our_strchr(list->s, '=');
 		if (!n)
 			return (0);
-		n = our_stdrup(n + 1);
+		n = our_strdup(n + 1);
 		if (!n)
 			return (0);
 		data->argv[0] = n;

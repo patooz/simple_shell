@@ -8,7 +8,7 @@ void cdata_t(data_t *data)
 {
 	data->argv = NULL;
 	data->argc = 0;
-	data->path = NULL;
+	data->p = NULL;
 	data->arg = NULL;
 }
 
@@ -34,7 +34,7 @@ void sdata_t(data_t *data, char **a)
 				data->argv[1] = NULL;
 			}
 		}
-		for (i = 0; data->argv && data->argv->[i]; i++)
+		for (i = 0; data->argv && data->argv[i]; i++)
 			;
 		data->argc = i;
 

@@ -68,7 +68,7 @@ int find_ln(data_t *data, char **a, size_t *ln)
 	if (!_o)
 		return (o ? free(o), -1 : -1);
 	if (n)
-		our_strncat(_0, b + i, k - i);
+		our_strncat(_o, b + i, k - i);
 	else
 		our_strncpy(_o, b + i, k - i + 1);
 	n += k - i;
@@ -146,5 +146,5 @@ void sig_h(__attribute__((unused)) int n)
 {
 	our_puts("\n");
 	our_puts("> ");
-	our_putschar(FLUSH);
+	our_putchar(FLUSH);
 }

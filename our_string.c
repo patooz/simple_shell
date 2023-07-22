@@ -34,8 +34,8 @@ char *first_char(const char *find, const char *search)
 	{
 		if (*find++ != *search++)
 			return (NULL);
-		return ((char *)search);
 	}
+	return ((char *)search);
 }
 
 /**

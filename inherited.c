@@ -82,7 +82,7 @@ int our_help(data_t *data)
 	char **r;
 
 	r = data->argv;
-	ourputs("help is okay\n");
+	our_puts("help is okay\n");
 	if (0)
 		our_puts(*r);
 	return (0);
