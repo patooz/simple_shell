@@ -1,4 +1,4 @@
-#!/bin/bash env bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -8,7 +8,7 @@ HOMEDIR="$(git -C "$SCRIPTDIR" rev-parse --show-toplevel)"
 set -x
 
 cat > "${HOMEDIR}/AUTHORS" <<- EOF
-	 # File contains the Authors of this repo
+         # File contains the Authors of this repo
 
-	$(git -C "$HOMEDIR" log --format='%aN <%aE>' | LC_ALL=UTF-8 sort -uf)
+        $(git -C "$HOMEDIR" log --format='%aN <%aE>' | LC_ALL=UTF-8 sort -uf)
 EOF
