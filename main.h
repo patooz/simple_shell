@@ -183,7 +183,7 @@ int geolist(data_t *i, char *buf, int linecount);
 int georenumber(data_t *i);
 
 /** ariel.c function */
-char * get(data_t *, const char *);
+char *get(data_t *, const char *);
 int our_env(data_t *);
 int our_set(data_t *);
 int our_unset(data_t *);
